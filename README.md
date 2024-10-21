@@ -1,10 +1,9 @@
 <p align="center">
-<img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
+    <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
 <h1>osTicket - Prerequisites and Installation</h1>
 This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
-
 
 <h2>Video Demonstration</h2>
 
@@ -13,51 +12,70 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
+- Remote Desktop (RDP)
 - Internet Information Services (IIS)
+- MySQL Database
+- PHP
 
-<h2>Operating Systems Used </h2>
+<h2>Operating Systems Used</h2>
 
-- Windows 10</b> (21H2)
+- Windows 10 (21H2)
 
 <h2>List of Prerequisites</h2>
-
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+Before installing osTicket, ensure the following prerequisites are met:
+1. **Azure Virtual Machine**: Provision a Windows VM through Microsoft Azure to host the osTicket server.
+2. **Remote Desktop**: Use Remote Desktop (mstsc.exe) to connect to your Azure VM and manage it remotely.
+3. **Internet Information Services (IIS)**: IIS must be installed and configured as the web server.
+4. **PHP Manager for IIS**: PHP needs to be installed and properly configured for osTicket.
+5. **MySQL**: MySQL should be set up to manage osTicket's ticket data.
+6. **Visual C++ Redistributable**: Necessary for PHP to work properly with IIS.
+7. **osTicket Installer**: Download the osTicket installation files.
 
 <h2>Installation Steps</h2>
+Below are the steps to install and configure osTicket:
 
+<h3>Step 1: Set up a Virtual Machine in Microsoft Azure</h3>
+- Provision a new Windows 10 VM in Microsoft Azure.
+- Assign appropriate resources like CPU and RAM depending on your workload.
 <p>
-<img src="https://i.imgur.com/chyaFyl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+    <img src="https://i.imgur.com/yourazureimage.png" height="80%" width="80%" alt="Azure VM Setup"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
+<h3>Step 2: Connect to the VM via Remote Desktop</h3>
+- Open Remote Desktop (mstsc.exe) and enter the public IP address of your Azure VM.
+- Log in with the credentials set up in Azure.
 <p>
-<img src="https://i.imgur.com/chyaFyl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+    <img src="https://i.imgur.com/yourremoteimage.png" height="80%" width="80%" alt="Remote Desktop Connection"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
+<h3>Step 3: Install IIS (Internet Information Services)</h3>
+- Use the Windows Features tool to install IIS.
+- Ensure that PHP Manager is also installed and enabled for IIS.
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+    <img src="https://i.imgur.com/youriisimage.png" height="80%" width="80%" alt="IIS Setup"/>
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
+<h3>Step 4: Install PHP and MySQL</h3>
+- Install PHP using PHP Manager for IIS.
+- Set up MySQL to store osTicket’s ticketing data.
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+    <img src="https://i.imgur.com/yourphpmysqlimage.png" height="80%" width="80%" alt="PHP and MySQL Setup"/>
 </p>
+
+<h3>Step 5: Download and Configure osTicket</h3>
+- Download the latest version of osTicket from the [official website](https://osticket.com/download).
+- Extract the installation files and place them in the IIS web directory (usually `C:\inetpub\wwwroot`).
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    <img src="https://i.imgur.com/yourosticketimage.png" height="80%" width="80%" alt="osTicket Setup"/>
 </p>
-<br />
+
+<h3>Step 6: Complete the Installation Wizard</h3>
+- Open a web browser and navigate to `http://<your-vm-ip>/osTicket/`.
+- Follow the on-screen instructions to complete the installation.
+- Configure osTicket with the MySQL database and other required settings.
+<p>
+    <img src="https://i.imgur.com/yourinstallwizardimage.png" height="80%" width="80%" alt="osTicket Installation Wizard"/>
+</p>
+
+<h2>Conclusion</h2>
+You have successfully installed osTicket on your Azure Virtual Machine using IIS, PHP, and MySQL. You can now begin using osTicket for managing helpdesk tickets.
