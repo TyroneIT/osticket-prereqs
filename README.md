@@ -22,14 +22,12 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - Windows 10 (21H2)
 
 <h2>List of Prerequisites</h2>
-Before installing osTicket, ensure the following prerequisites are met:
-1. **Azure Virtual Machine**: Provision a Windows VM through Microsoft Azure to host the osTicket server.
-2. **Remote Desktop**: Use Remote Desktop (mstsc.exe) to connect to your Azure VM and manage it remotely.
-3. **Internet Information Services (IIS)**: IIS must be installed and configured as the web server.
-4. **PHP Manager for IIS**: PHP needs to be installed and properly configured for osTicket.
-5. **MySQL**: MySQL should be set up to manage osTicket's ticket data.
-6. **Visual C++ Redistributable**: Necessary for PHP to work properly with IIS.
-7. **osTicket Installer**: Download the osTicket installation files.
+Windows VM on Microsoft Azure
+Remote Desktop (mstsc.exe)
+IIS with PHP Manager
+MySQL Database
+Visual C++ Redistributable
+osTicket Installer
 
 <h2>Installation Steps</h2>
 Below are the steps to install and configure osTicket:
